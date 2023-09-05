@@ -24,7 +24,7 @@ for i = 1:length(id)
 
     for d = 1:length(DCM_Files)
         curr_file = DCM_Files{d}; % Use curly braces {} to access cell elements
-        DCM_path = strcat(basepath, curr_id, '/1st_level/DCM_Files/', curr_file); 
+        DCM_path = strcat(basepath, 'Data/', curr_id, '/1st_level/DCM_Files/', curr_file); 
         GCM{i,1} = strrep(DCM_path, '''', ''); % Remove apostrophes using strrep
     end  
 end

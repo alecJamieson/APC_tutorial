@@ -19,15 +19,15 @@ M.hC = 0.0625;
 M.X = ones(N,1);
 
 % Choose field
-field = {'B'};
+field = {'A'};
 
 % Estimate model
 PEB = spm_dcm_peb(GCM,M,field);
 
-save([basepath,'PEB_group_level_estimated_together.mat'],'PEB');
+save([basepath,'PEB_group_level_estimated.mat'],'PEB');
 
 % Search over nested PEB models.
 BMA = spm_dcm_peb_bmc(PEB);
 
-save([basepath,'BMA_search_PEB_group_level_estimated_together.mat'],'BMA');
+save([basepath,'BMA_search_PEB_group_level_estimated.mat'],'BMA');
 spm_dcm_peb_review(BMA,GCM)
