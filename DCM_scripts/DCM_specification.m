@@ -4,7 +4,7 @@
 
 clear DCM
 
-basepath = '/data/netapp01/work/alecj/APC_tutorial/Data';
+basepath = '/data/netapp01/work/alecj/APC_tutorial/Data/';
 
 id = {'sub-01'
 'sub-02'
@@ -73,7 +73,7 @@ DCM.U.u    = [SPM.Sess.U(1).u(33:end,1) ...
               SPM.Sess.U(2).u(33:end,1)];
 
 DCM.delays = repmat(SPM.xY.RT/2,DCM.n,1);
-DCM.TE     = 0.030;
+DCM.TE     = 0.035;
 
 DCM.options.nonlinear  = 0;
 DCM.options.two_state  = 0;
@@ -83,8 +83,8 @@ DCM.options.induced    = 0;
 
 % A, B and C matrix specification
 %-------------------------------------------------------------------------
-DCM.a = [1,1,1,0; 1,1,0,1; 1,0,1,1; 0,1,1,1];
-DCM.b = zeros(4,4,2); DCM.b(1,2,2) = 1; DCM.b(2,1,2) = 1; DCM.b(1,3,2) = 1; DCM.b(3,1,2) = 1; DCM.b(4,3,2) = 1; DCM.b(3,4,2) = 1; DCM.b(4,2,2) = 1; DCM.b(2,4,2) = 1;
+DCM.a = [1,0,1,0; 0,1,0,1; 1,0,1,0; 0,1,0,1];
+DCM.b = zeros(4,4,2); DCM.b(1,3,2) = 1; DCM.b(3,1,2) = 1; DCM.b(4,2,2) = 1; DCM.b(2,4,2) = 1;
 DCM.c = [1 0; 1 0; 0 0; 0 0];
 DCM.d = zeros(4,4,0);
 

@@ -2,7 +2,7 @@
 %Set up paths
 basepath = '/data/netapp01/work/alecj/APC_tutorial/';
 GCM_file = 'GCM_negative_face';
-GCM_path = [basepath, GCM_file, '_estimated_PEB.mat'];
+GCM_path = [basepath, GCM_file, '_estimated_no_PEB.mat'];
 
 load(GCM_path);
 N = size(GCM,1);
@@ -19,8 +19,7 @@ M.hC = 0.0625;
 M.X = ones(N,1);
 
 % Choose field
-field = {'A'
-         'B'};
+field = {'B'};
 
 % Estimate model
 PEB = spm_dcm_peb(GCM,M,field);
