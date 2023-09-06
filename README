@@ -1,2 +1,7 @@
 Files neccessary for the DCM component of Australian Psychosis Conference 2023 workshop
 
+Getting started:
+Clone the APC_tutorial github repository
+
+git clone https://github.com/alecJamieson/APC_tutorial
+
